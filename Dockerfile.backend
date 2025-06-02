@@ -1,0 +1,19 @@
+# Dockerfile.backend (at repository root)
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# 1) Copy the LoRA‐finetuned model files from ./models/codet5-lora
+COPY models/codet5-lora /app/model
+
+# 2) Copy API requirements and install them
+COPY api/requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt
+
+# 3) Copy the entire api/ folder into /app
+COPY api /app
+
+EXPOSE 8000
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
