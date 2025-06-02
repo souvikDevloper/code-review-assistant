@@ -15,4 +15,4 @@ services:
       context: ./frontend          # ← use the "frontend/" folder as the build context
       dockerfile: Dockerfile       # ← Dockerfile lives at "frontend/Dockerfile"
     ports:
-      - "3000:3000"
+      - "3000:80"
