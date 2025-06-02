@@ -1,8 +1,8 @@
-/* frontend/src/index.css */
-
-/* 1) Import Tailwind’s base, components, and utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 2) (Optional) Add any additional global overrides here */
+/* Optional global styling: */
+body {
+  @apply bg-gray-50 text-gray-800;
+}
